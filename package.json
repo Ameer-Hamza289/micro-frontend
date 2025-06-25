@@ -1,0 +1,30 @@
+{
+  "name": "micromart-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shell-app",
+    "product-catalog",
+    "cart-service",
+    "user-dashboard",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:shell\" \"npm run dev:products\" \"npm run dev:cart\" \"npm run dev:dashboard\"",
+    "dev:shell": "cd shell-app && npm run dev",
+    "dev:products": "cd product-catalog && npm run dev",
+    "dev:cart": "cd cart-service && npm run dev",
+    "dev:dashboard": "cd user-dashboard && npm run dev",
+    "build": "npm run build:shared && npm run build:shell && npm run build:products && npm run build:cart && npm run build:dashboard",
+    "build:shared": "cd shared && npm run build",
+    "build:shell": "cd shell-app && npm run build",
+    "build:products": "cd product-catalog && npm run build",
+    "build:cart": "cd cart-service && npm run build",
+    "build:dashboard": "cd user-dashboard && npm run build",
+    "setup": "npm install && npm run setup:all",
+    "setup:all": "concurrently \"cd shell-app && npm install\" \"cd product-catalog && npm install\" \"cd cart-service && npm install\" \"cd user-dashboard && npm install\" \"cd shared && npm install\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 

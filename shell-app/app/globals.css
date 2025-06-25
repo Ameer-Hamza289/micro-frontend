@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Base styles */
+* {
+  @apply border-gray-200;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  @apply text-gray-900 bg-white antialiased;
+}
+
+/* Custom utilities */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.slide-up {
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.scale-in {
+  transform: scale(0.95);
+  opacity: 0;
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Custom components */
+.btn-primary {
+  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors;
+}
+
+/* Brand colors */
+.bg-brand-50 { @apply bg-blue-50; }
+.bg-brand-100 { @apply bg-blue-100; }
+.bg-brand-500 { @apply bg-blue-500; }
+.bg-brand-600 { @apply bg-blue-600; }
+.bg-brand-700 { @apply bg-blue-700; }
+
+.text-brand-500 { @apply text-blue-500; }
+.text-brand-600 { @apply text-blue-600; }
+.text-brand-700 { @apply text-blue-700; }
+
+.border-brand-200 { @apply border-blue-200; }
+.border-brand-500 { @apply border-blue-500; }
+
+.ring-brand-500 { @apply ring-blue-500; }
+
+/* Success colors */
+.bg-success-50 { @apply bg-green-50; }
+.bg-success-500 { @apply bg-green-500; }
+.bg-success-600 { @apply bg-green-600; }
+.text-success-600 { @apply text-green-600; }
+
+/* Error colors */
+.bg-error-50 { @apply bg-red-50; }
+.bg-error-500 { @apply bg-red-500; }
+.bg-error-600 { @apply bg-red-600; }
+.text-error-600 { @apply text-red-600; } 
