@@ -120,7 +120,6 @@ public
 .pnp.*
 
 # IDEs
-.vscode/
 .idea/
 *.swp
 *.swo
